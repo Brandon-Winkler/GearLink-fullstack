@@ -1,5 +1,5 @@
-import { Post } from './posts';
-const entities = [Post];
+import { Equipment } from './equipment.entity';
+const entities = [Equipment];
 
-export { Post };
+export { Equipment };
 export default entities;
