@@ -86,6 +86,13 @@ export class Equipment {
   Phone: string;
 
   @Column({
+    nullable: true,
+    type: 'varchar',
+    length: 255,
+  })
+  imageFolderUrl: string;
+
+  @Column({
     nullable: false,
     type: 'date',
   })
