@@ -82,30 +82,26 @@ const SideBar: React.FC = () => {
                             <input type="checkbox" className="accent-black cursor-pointer" />
                             <p className="pl-2">Used</p>
                         </div>
-
                     </ul>
                 </div>
                 <div className="border-b-2 pb-5">
                     <h1 className="text-lg pl-5 py-4 font-medium">Date</h1>
                     <div className="flex flex-col">
                         <form className="pl-5 flex flex-col px-16">
-
-                            <label htmlFor="Earlist">Earlist:</label><br />
+                            <label htmlFor="From">From:</label><br />
                             <input
                                 type="text"
-                                id="Earliest"
+                                id="From"
                                 placeholder="mm/dd/yyyy"
                                 className="px-5 py-2 pl-5 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
                             />
-
-                            <label htmlFor="Latest" className="pt-4">Latest:</label><br />
+                            <label htmlFor="To" className="pt-4">To:</label><br />
                             <input
                                 type="text"
-                                id="Lastest"
+                                id="To"
                                 placeholder="mm/dd/yyyy"
                                 className="px-5 py-2 pl-5 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
                             />
-
                         </form>
                     </div>
                 </div>

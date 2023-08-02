@@ -1,10 +1,22 @@
+import { useState, ChangeEvent } from "react";
+
 const PostForm: React.FC = () => {
-    return(
+
+    const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
+
+    const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const files = event.target.files;
+        if (files) {
+            setSelectedFiles([...files]);
+          }
+    };
+
+    return (
         <form action="">
             <label htmlFor="productName">Product Name</label>
-            <input type="text" id="productName"/>
+            <input type="text" id="productName" />
             <label htmlFor="price">Price $</label>
-            <input type="number" id="price"/>
+            <input type="number" id="price" />
             <label htmlFor="category">Categroy</label>
             <select name="categories" id="category">
                 <option value="barbell">Barbell</option>
@@ -32,15 +44,23 @@ const PostForm: React.FC = () => {
                 <option value="trx">TRX</option>
             </select>
             <label htmlFor="city">City</label>
-            <input type="text" id="city"/>
+            <input type="text" id="city" />
             <label htmlFor="zip">Zip</label>
-            <input type="text" id="zip"/>
+            <input type="text" id="zip" />
             <label htmlFor="description">Description</label>
             <textarea name="description" id="description" className='resize' cols={30} rows={10}></textarea>
             <label htmlFor="email">Email</label>
-            <input type="email" id="email"/>
+            <input type="email" id="email" />
             <label htmlFor="phone">Phone</label>
-            <input type="text" id="phone"/>
+            <input type="text" id="phone" />
+            <label htmlFor="photos">Upload Photos</label>
+            <input type="file" name="files[]" multiple onChange={handleFileChange} />
+            <ul>
+                {selectedFiles.map((file, index) => (
+                    <li key={index}>{file.name}</li>
+                ))}
+            </ul>
+            <button type="submit">Post</button>
         </form>
 
     );
