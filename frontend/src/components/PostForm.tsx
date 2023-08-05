@@ -1,4 +1,5 @@
 import { useState, ChangeEvent } from "react";
+import UploadPhotos from "./UploadPhotos";
 
 const PostForm: React.FC = () => {
 
@@ -8,7 +9,7 @@ const PostForm: React.FC = () => {
         const files = event.target.files;
         if (files) {
             setSelectedFiles([...files]);
-          }
+        }
     };
 
     return (
@@ -53,13 +54,7 @@ const PostForm: React.FC = () => {
             <input type="email" id="email" />
             <label htmlFor="phone">Phone</label>
             <input type="text" id="phone" />
-            <label htmlFor="photos">Upload Photos</label>
-            <input type="file" name="files[]" multiple onChange={handleFileChange} />
-            <ul>
-                {selectedFiles.map((file, index) => (
-                    <li key={index}>{file.name}</li>
-                ))}
-            </ul>
+            <UploadPhotos />
             <button type="submit">Post</button>
         </form>
 
