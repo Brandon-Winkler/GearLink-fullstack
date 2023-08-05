@@ -1,16 +1,6 @@
-import { useState, ChangeEvent } from "react";
 import UploadPhotos from "./UploadPhotos";
 
 const PostForm: React.FC = () => {
-
-    const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
-
-    const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const files = event.target.files;
-        if (files) {
-            setSelectedFiles([...files]);
-        }
-    };
 
     return (
         <form action="">
