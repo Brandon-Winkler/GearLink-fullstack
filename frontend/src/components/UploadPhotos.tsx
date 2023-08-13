@@ -23,7 +23,7 @@ const UploadPhotos: React.FC = () => {
 
     return (
         <>
-            <label htmlFor="photos">Upload Photos</label>
+            <label htmlFor="uploadPhotos">Upload Photos</label>
             <input type="file" name="files[]" multiple onChange={handleFileChange} />
             <ul>
                 {selectedFiles.map((file, index) => (
