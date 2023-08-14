@@ -10,6 +10,7 @@ const PostForm: React.FC = () => {
             <input type="number" id="price" />
             <label htmlFor="category">Categroy</label>
             <select name="categories" id="category">
+                <option value="null" selected>--Select an option--</option>
                 <option value="barbell">Barbell</option>
                 <option value="weight">Weight</option>
                 <option value="bench">Bench</option>
@@ -23,6 +24,7 @@ const PostForm: React.FC = () => {
             </select>
             <label htmlFor="brand">Brand</label>
             <select name="brands" id="brand">
+                <option value="null" selected>--Select an option--</option>
                 <option value="rogue">Rogue</option>
                 <option value="rep">Rep</option>
                 <option value="sorinex">Sorinex</option>

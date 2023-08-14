@@ -1,6 +1,5 @@
 import { useState, ChangeEvent } from "react";
-import * as AWS from 'aws-sdk';
-import 'dotenv/config'
+// import * as AWS from 'aws-sdk';
 
 const UploadPhotos: React.FC = () => {
 
@@ -13,13 +12,13 @@ const UploadPhotos: React.FC = () => {
         }
     };
 
-    AWS.config.update({
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-        region: process.env.AWS_REGION
-    });
+    // AWS.config.update({
+    //     accessKeyId: import.meta.env.AWS_ACCESS_KEY_ID,
+    //     secretAccessKey: import.meta.env.AWS_SECRET_ACCESS_KEY,
+    //     region: import.meta.env.AWS_REGION
+    // });
 
-    const s3 = new AWS.S3();
+    // const s3 = new AWS.S3();
 
     return (
         <>
