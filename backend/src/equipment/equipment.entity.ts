@@ -43,7 +43,7 @@ export class Equipment {
   Brand: string;
 
   @Column({
-    nullable: false,
+    nullable: true,
     type: 'varchar',
     length: 25,
   })
@@ -72,7 +72,7 @@ export class Equipment {
   Description: string;
 
   @Column({
-    nullable: false,
+    nullable: true,
     type: 'varchar',
     length: 255,
   })
