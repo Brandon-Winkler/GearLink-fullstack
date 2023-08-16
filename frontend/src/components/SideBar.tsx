@@ -115,6 +115,7 @@ const SideBar: React.FC = () => {
                                     type="number"
                                     id="minPrice"
                                     name="minPrice"
+                                    min={0}
                                     step="100"
                                     className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:border-black"
                                 />
@@ -126,6 +127,7 @@ const SideBar: React.FC = () => {
                                     type="number"
                                     id="maxPrice"
                                     name="maxPrice"
+                                    min={0}
                                     step="100"
                                     className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:border-black"
                                 />

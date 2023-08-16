@@ -7,7 +7,7 @@ const PostForm: React.FC = () => {
             <label htmlFor="productName">Product Name</label>
             <input type="text" id="productName" />
             <label htmlFor="price">Price $</label>
-            <input type="number" id="price" />
+            <input type="number" min={0} id="price" />
             <label htmlFor="category">Categroy</label>
             <select name="categories" id="category">
                 <option value="null" selected>--None--</option>
