@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UserController } from './user/user.controller';
 import entities from '.';
 import 'dotenv/config'
 
@@ -16,7 +15,7 @@ import 'dotenv/config'
     entities: entities,
     synchronize: true,
   })],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [UserController],
+  providers: [],
 })
-export class AppModule { }
+export class AppModule {}
