@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UserController } from './user/user.controller';
+import { UserModule } from './user/user.module';
 import entities from '.';
 import 'dotenv/config'
 
@@ -14,8 +14,8 @@ import 'dotenv/config'
     database: process.env.DB_DATABASE,
     entities: entities,
     synchronize: true,
-  })],
-  controllers: [UserController],
+  }), UserModule],
+  controllers: [],
   providers: [],
 })
 export class AppModule {}

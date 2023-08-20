@@ -27,6 +27,7 @@ export class User {
         nullable: false,
         type: 'varchar',
         length: 255,
+        unique: true,
     })
     UserName: string;
 
@@ -36,4 +37,7 @@ export class User {
         length: 255,
     })
     Password: string;
+
+    @Column()
+    createdAt: Date;
 }
