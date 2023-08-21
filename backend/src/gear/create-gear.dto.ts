@@ -1,6 +1,6 @@
 import { IsDate, IsEmail, IsNotEmpty, IsNumber, IsString } from "class-validator";
 
-export class createEquipmentDto {
+export class createGearDto {
 
     @IsNotEmpty()
     @IsString()

@@ -1,7 +1,7 @@
-import { Equipment } from './equipment/equipment.entity';
+import { Gear } from './gear/gear.entity';
 import { User } from './user/user.entity';
 
-const entities = [Equipment, User];
+const entities = [Gear, User];
 
-export { Equipment, User };
+export { Gear, User };
 export default entities;
