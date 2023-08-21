@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './user.entity';
 import { Repository } from 'typeorm';
@@ -12,6 +12,7 @@ export class UserService {
     ) {}
 
     createUser(userDetails: createUserDto) {
-        const newUser = this.userRepo.create({...userDetails, createdAt: new Date()})
+        const newUser = this.userRepo.create({...userDetails, createdAt: new Date()});
+        return this.userRepo.save(newUser);
     }
 }
