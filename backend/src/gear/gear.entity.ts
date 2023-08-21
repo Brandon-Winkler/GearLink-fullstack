@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn } from "typeorm";
 
 @Entity()
 export class Gear {
@@ -14,7 +14,7 @@ export class Gear {
     type: 'varchar', 
     length: 255,
   })
-  ProductName: string;
+  productName: string;
 
   @Column({ 
     nullable: true,
@@ -24,7 +24,7 @@ export class Gear {
     default: 0.00,
     unsigned: true,
   })
-  Price: number;
+  price: number;
 
   @Column({
     nullable: true,
@@ -32,7 +32,7 @@ export class Gear {
     length: 100,
     default: 'none',
   })
-  Category: string;
+  category: string;
 
   @Column({
     nullable: true,
@@ -40,14 +40,14 @@ export class Gear {
     length: 100,
     default: 'none',
   })
-  Brand: string;
+  brand: string;
 
   @Column({
     nullable: true,
     type: 'varchar',
     length: 25,
   })
-  Condition: string;
+  condition: string;
 
   @Column({
     nullable: true,
@@ -55,7 +55,7 @@ export class Gear {
     length: 255,
     default: '',
   })
-  City: string;
+  city: string;
 
   @Column({
     nullable: true,
@@ -63,27 +63,27 @@ export class Gear {
     length: 25,
     default: '',
   })
-  Zip: string;
+  zip: string;
 
   @Column({
     nullable: true,
     type: 'text',
   })
-  Description: string;
+  description: string;
 
   @Column({
     nullable: true,
     type: 'varchar',
     length: 255,
   })
-  Email: string;
+  email: string;
 
   @Column({
     nullable: true,
     type: 'varchar',
     length: 25,
   })
-  Phone: string;
+  phone: string;
 
   @Column({
     nullable: true,
@@ -92,9 +92,6 @@ export class Gear {
   })
   imageFolderUrl: string;
 
-  @Column({
-    nullable: false,
-    type: 'date',
-  })
-  Date: string;
+  @CreateDateColumn()
+  createdAt: Date;
 }

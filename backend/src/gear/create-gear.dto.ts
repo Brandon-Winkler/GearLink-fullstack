@@ -1,4 +1,4 @@
-import { IsDate, IsEmail, IsNotEmpty, IsNumber, IsString } from "class-validator";
+import { IsEmail, IsNotEmpty, IsNumber, IsString, IsOptional } from "class-validator";
 
 export class createGearDto {
 
@@ -7,6 +7,7 @@ export class createGearDto {
     productName: string;
     
     @IsNumber()
+    @IsOptional()
     price: number;
     
     @IsString()
@@ -28,6 +29,7 @@ export class createGearDto {
     description: string;
     
     @IsEmail()
+    @IsOptional()
     email: string;
     
     @IsString()
@@ -35,8 +37,4 @@ export class createGearDto {
     
     @IsString()
     imageFolderUrl: string;
-    
-    @IsNotEmpty()
-    @IsDate()
-    date: string;
 }
