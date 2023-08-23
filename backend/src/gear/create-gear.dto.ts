@@ -11,21 +11,27 @@ export class createGearDto {
     price: number;
     
     @IsString()
+    @IsOptional()
     category: string;
     
     @IsString()
+    @IsOptional()
     brand: string;
     
     @IsString()
+    @IsOptional()
     condition: string;
     
     @IsString()
+    @IsOptional()
     city: string;
     
     @IsString()
+    @IsOptional()
     zip: string;
     
     @IsString()
+    @IsOptional()
     description: string;
     
     @IsEmail()
@@ -33,8 +39,10 @@ export class createGearDto {
     email: string;
     
     @IsString()
+    @IsOptional()
     phone: string;
     
     @IsString()
+    @IsOptional()
     imageFolderUrl: string;
 }

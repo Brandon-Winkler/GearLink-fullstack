@@ -30,7 +30,7 @@ export class Gear {
     nullable: true,
     type: 'varchar',
     length: 100,
-    default: 'none',
+    default: 'N/A',
   })
   category: string;
 
@@ -38,7 +38,7 @@ export class Gear {
     nullable: true,
     type: 'varchar',
     length: 100,
-    default: 'none',
+    default: 'N/A',
   })
   brand: string;
 
@@ -46,6 +46,7 @@ export class Gear {
     nullable: true,
     type: 'varchar',
     length: 25,
+    default: 'N/A',
   })
   condition: string;
 
@@ -75,6 +76,7 @@ export class Gear {
     nullable: true,
     type: 'varchar',
     length: 255,
+    default: '',
   })
   email: string;
 
@@ -82,6 +84,7 @@ export class Gear {
     nullable: true,
     type: 'varchar',
     length: 25,
+    default: '',
   })
   phone: string;
 
