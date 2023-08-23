@@ -15,4 +15,8 @@ export class GearService {
         const newGear = this.gearRepo.create({...gearDetails, createdAt: new Date()});
         return this.gearRepo.save(newGear);
     }
+
+    getAllGear() {
+        return this.gearRepo.find();
+    }
 }
