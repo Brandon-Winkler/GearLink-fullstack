@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn } from "typeorm";
+import { ImgUrl } from "src/photos/ImgUrl.entity";
+import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, OneToOne, JoinColumn } from "typeorm";
 
 @Entity()
 export class Gear {
@@ -88,12 +89,9 @@ export class Gear {
   })
   phone: string;
 
-  @Column({
-    nullable: true,
-    type: 'varchar',
-    length: 255,
-  })
-  imageFolderUrl: string;
+  @OneToOne(() => ImgUrl)
+  @JoinColumn()
+  imgFolderUrl: ImgUrl;
 
   @CreateDateColumn()
   createdAt: Date;
