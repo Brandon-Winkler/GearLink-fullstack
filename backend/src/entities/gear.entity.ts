@@ -1,4 +1,4 @@
-import { ImgUrl } from "src/photos/ImgUrl.entity";
+import { ImgUrl } from "src/entities/ImgUrl.entity";
 import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, OneToOne, JoinColumn } from "typeorm";
 
 @Entity()

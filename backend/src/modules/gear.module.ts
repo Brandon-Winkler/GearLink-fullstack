@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Gear } from './gear.entity';
-import { GearController } from './gear.controller';
-import { GearService } from './gear.service';
+import { Gear } from 'src/entities/gear.entity';
+import { GearController } from 'src/controllers/gear.controller';
+import { GearService } from 'src/services/gear.service';
 
 @Module({
     imports: [TypeOrmModule.forFeature([Gear])],
