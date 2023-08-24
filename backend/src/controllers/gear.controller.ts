@@ -13,7 +13,7 @@ export class GearController {
         this.gearService.createGear(gearData);
     }
 
-    @Get()
+    @Get('get-all')
     async getGear() {
         const gear = await this.gearService.getAllGear();
         return gear;
