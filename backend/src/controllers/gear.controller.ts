@@ -1,4 +1,4 @@
-import { Body, Controller, Post, UsePipes, ValidationPipe, Get } from '@nestjs/common';
+import { Body, Controller, Post, UsePipes, ValidationPipe, Get, Delete, Param, ParseIntPipe } from '@nestjs/common';
 import { createGearDto } from 'src/dtos/create-gear.dto';
 import { GearService } from 'src/services/gear.service';
 
@@ -17,5 +17,10 @@ export class GearController {
     async getGear() {
         const gear = await this.gearService.getAllGear();
         return gear;
+    }
+
+    @Delete(':id')
+    async deleteGearById(@Param('id', ParseIntPipe) id: number) {
+        await this.gearService.deleteGear(id);
     }
 }

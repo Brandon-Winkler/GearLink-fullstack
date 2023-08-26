@@ -19,4 +19,8 @@ export class GearService {
     getAllGear() {
         return this.gearRepo.find();
     }
+
+    deleteGear(id: number) {
+        return this.gearRepo.delete({id});
+    }
 }
