@@ -1,4 +1,5 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Gear } from "src/gear/gear.entity";
 
 @Entity()
 export class User {
@@ -37,6 +38,9 @@ export class User {
         length: 255,
     })
     password: string;
+
+    @OneToMany(() => Gear, (gear) => gear.user)
+    gear: Gear[];
 
     @CreateDateColumn()
     createdAt: Date;

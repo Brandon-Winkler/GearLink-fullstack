@@ -1,5 +1,6 @@
-import { ImgUrl } from "src/entities/ImgUrl.entity";
-import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, OneToOne, JoinColumn } from "typeorm";
+import { ImgUrl } from "src/ImgUrl/ImgUrl.entity";
+import { User } from "src/user/user.entity"; 
+import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, OneToOne, JoinColumn, ManyToOne } from "typeorm";
 
 @Entity()
 export class Gear {
@@ -92,6 +93,9 @@ export class Gear {
   @OneToOne(() => ImgUrl)
   @JoinColumn()
   imgFolderUrl: ImgUrl;
+
+  @ManyToOne(() => User, (user) => user.gear)
+  user: User;
 
   @CreateDateColumn()
   createdAt: Date;

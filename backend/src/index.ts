@@ -1,6 +1,6 @@
-import { Gear } from './entities/gear.entity';
-import { User } from './entities/user.entity';
-import { ImgUrl } from './entities/ImgUrl.entity';
+import { Gear } from './gear/gear.entity';
+import { User } from './user/user.entity';
+import { ImgUrl } from './ImgUrl/ImgUrl.entity';
 
 const entities = [Gear, User, ImgUrl];
 

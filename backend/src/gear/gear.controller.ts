@@ -1,6 +1,6 @@
 import { Body, Controller, Post, UsePipes, ValidationPipe, Get, Delete, Param, ParseIntPipe } from '@nestjs/common';
-import { createGearDto } from 'src/dtos/create-gear.dto';
-import { GearService } from 'src/services/gear.service';
+import { createGearDto } from './create-gear.dto';
+import { GearService } from './gear.service';
 
 @Controller('gear')
 export class GearController {
