@@ -19,7 +19,7 @@ export class GearController {
         return gear;
     }
 
-    @Delete(':id')
+    @Delete('delete/:id')
     async deleteGearById(@Param('id', ParseIntPipe) id: number) {
         await this.gearService.deleteGear(id);
     }
