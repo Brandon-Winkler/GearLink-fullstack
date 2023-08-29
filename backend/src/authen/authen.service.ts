@@ -13,9 +13,7 @@ export class AuthenService {
             console.log('did we find the user?')
             const matched = comparePasswords(password, userDB.password);
             console.log('successful password match!')
-            if(matched) {
-                return userDB;
-            } 
+            if(matched) return userDB; 
         }
         console.log('user validation failed');
         return null;

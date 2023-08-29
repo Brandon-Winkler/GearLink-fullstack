@@ -8,9 +8,7 @@ import { encodePassword } from 'src/bcrypt';
 @Injectable()
 export class UserService {
 
-    constructor(
-        @InjectRepository(User) private readonly userRepo: Repository<User>
-    ) {}
+    constructor(@InjectRepository(User) private readonly userRepo: Repository<User>) {}
 
     createUser(userDetails: createUserDto) {
         const password = encodePassword(userDetails.password);
