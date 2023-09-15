@@ -49,13 +49,13 @@ const PostForm: React.FC = () => {
             <input type="text" id="city" />
             <label htmlFor="zip">Zip</label>
             <input type="text" id="zip" />
-            <label htmlFor="description">Description</label>
-            <textarea name="description" id="description" className='resize' cols={30} rows={10}></textarea>
             <label htmlFor="email">Email</label>
             <input type="email" id="email" />
             <label htmlFor="phone">Phone</label>
             <input type="text" id="phone" />
             <UploadPhotos />
+            <label htmlFor="description">Description</label>
+            <textarea name="description" id="description" className='resize' cols={30} rows={10}></textarea>
             <button type="submit">Post</button>
         </form>
 
