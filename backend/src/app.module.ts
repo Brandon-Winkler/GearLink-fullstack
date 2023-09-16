@@ -15,7 +15,7 @@ import 'dotenv/config'
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
     entities: entities,
-    synchronize: true,
+    synchronize: false,
   }), UserModule, GearModule, AuthenModule],
   controllers: [],
   providers: [],
