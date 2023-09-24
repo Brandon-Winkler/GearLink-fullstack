@@ -20,4 +20,8 @@ export class UserService {
         console.log('inside findUserByUsername')
         return this.userRepo.findOneBy({userName});
     }
+
+    findUserById(id: number) {
+        return this.userRepo.findOneBy({id});
+    }
 }
