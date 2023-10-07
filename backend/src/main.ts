@@ -1,5 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { TypeormStore } from 'connect-typeorm';
 import * as session from 'express-session';
 import * as passport from 'passport';
 import { config } from 'dotenv';
@@ -16,6 +17,7 @@ async function bootstrap() {
       cookie: {
         maxAge: 60000,
       },
+      store: new TypeormStore(),
     }),
   );
   app.use(passport.initialize());
