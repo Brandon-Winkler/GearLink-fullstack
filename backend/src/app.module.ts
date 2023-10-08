@@ -17,7 +17,5 @@ import 'dotenv/config'
     entities: entities,
     synchronize: false,
   }), UserModule, GearModule, AuthenModule],
-  controllers: [],
-  providers: [],
 })
 export class AppModule {}
