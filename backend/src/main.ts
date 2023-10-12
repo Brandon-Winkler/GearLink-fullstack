@@ -4,12 +4,15 @@ import { TypeormStore } from 'connect-typeorm';
 import * as session from 'express-session';
 import * as passport from 'passport';
 import { config } from 'dotenv';
+import { DataSource } from 'typeorm';
+import { SessionEntity } from './sessions/session.entity';
 
 async function bootstrap() {
   // load env variables
   config();
   
   const app = await NestFactory.create(AppModule);
+  const sessionRepo = app.get(DataSource).getRepository(SessionEntity);
   app.use(session({
       secret: process.env.SECRET_SESSION_KEY,
       resave: false,
@@ -17,7 +20,7 @@ async function bootstrap() {
       cookie: {
         maxAge: 60000,
       },
-      store: new TypeormStore(),
+      store: new TypeormStore().connect(sessionRepo),
     }),
   );
   app.use(passport.initialize());
