@@ -9,12 +9,7 @@ import { LocalStrategy } from './local.strategy';
 import { SessionSerializer } from './session.serializer';
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([User]), 
-    PassportModule.register({
-      session: true,
-    }),
-  ],
+  imports: [TypeOrmModule.forFeature([User])],
   controllers: [AuthenController],
   providers: [
     {

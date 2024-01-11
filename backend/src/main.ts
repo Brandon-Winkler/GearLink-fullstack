@@ -14,6 +14,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const sessionRepo = app.get(DataSource).getRepository(SessionEntity);
   app.use(session({
+      name: "Gear_Link_Session_id",
       secret: process.env.SECRET_SESSION_KEY,
       resave: false,
       saveUninitialized: false,

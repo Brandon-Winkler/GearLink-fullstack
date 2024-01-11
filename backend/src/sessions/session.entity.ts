@@ -1,5 +1,5 @@
 import { ISession } from "connect-typeorm";
-import { Column, Entity, Index, PrimaryColumn } from "typeorm";
+import { Column, Entity, Index, PrimaryColumn, DeleteDateColumn } from "typeorm";
 
 @Entity({name: 'sessions'})
 export class SessionEntity implements ISession {
@@ -8,9 +8,12 @@ export class SessionEntity implements ISession {
     @Column('bigint')
     public expiredAt: number = Date.now();
     
-    @PrimaryColumn()
-    id: string = "";
+    @PrimaryColumn('varchar', {length:255})
+    id: string;
 
-    @Column()
-    json: string = "";
+    @Column('text')
+    json: string;
+
+    @DeleteDateColumn({ name: 'deletedAt' })
+    deletedAt?: Date;
 }
